@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Add",
+    "id": "Addition",
+    "appliesTo": 
+    [
+      "bpmn:Process"
+    ],
+    "properties":
+    [
+      {
+        
+      }
+    ]
+  }
+]
