@@ -1,0 +1,6 @@
+
+*.swp
+
+camunda-engine/
+camunda-modeler/
+
