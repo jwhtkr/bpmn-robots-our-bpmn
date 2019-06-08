@@ -9,7 +9,9 @@ while true; do
   echo "1. Start Camunda Modeler"
   echo "2. Start Camunda Engine"
   echo "3. End Camunda Engine"
-  echo "4. Exit This Program"
+  echo "4. Run install script"
+  echo "5. Run clean script"
+  echo "6. Exit This Program"
   echo
   echo -n "Type the number you want and push enter: "
   read num
@@ -19,11 +21,17 @@ while true; do
     xterm -e 'cd camunda-modeler && ./camunda-modeler' &
   elif (("2" == "$num")); then
     echo "Starting Camunda Engine"
-    xterm -e 'cd camunda-engine && ./start-camunda.sh && sleep 10' &
+    xterm -e 'cd camunda-engine && ./start-camunda.sh && while [ true ]; do sleep 10 || break; done;' &
   elif (("3" == "$num")); then
     echo "Killing Camunda Engine"
     xterm -e 'cd camunda-engine && ./shutdown-camunda.sh' &
   elif (("4" == "$num")); then
+    echo "Running install script"
+    ./install.sh
+  elif (("5" == "$num")); then
+    echo "Running cleanup script"
+    ./clean.sh
+  elif (("6" == "$num")); then
     echo "Exiting"
     break
   else

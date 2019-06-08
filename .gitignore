@@ -1,5 +1,6 @@
 
 *.swp
+*.bpmn
 
 camunda-engine/
 camunda-modeler/

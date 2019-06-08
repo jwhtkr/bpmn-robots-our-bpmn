@@ -1,15 +1,32 @@
 [
   {
-    "name": "Add",
-    "id": "Addition",
-    "appliesTo": 
+    "name" : "Add",
+    "id" : "Addition",
+    "appliesTo" : 
     [
-      "bpmn:Process"
+      "bpmn:Task"
     ],
-    "properties":
+    "properties" :
     [
       {
-        
+        "label" : "First Number",
+        "type" : "String",
+        "value" : "2",
+        "binding" :
+        {
+          "name" : "NumberOne",
+          "type" : "camunda:inputParameter"
+        }
+      },
+      {
+        "label" : "Second Number",
+        "type" : "String",
+        "value" : "2",
+        "binding" :
+        {
+          "name" : "NumberTwo",
+          "type" : "camunda:inputParameter"
+        }
       }
     ]
   }
