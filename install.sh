@@ -17,13 +17,17 @@ sudo rm -r ./camunda-engine/server/apache-tomcat-9.0.19/webapps/camunda-invoice/
 echo 
 echo "Downloading Plugins"
 echo 
-
+echo "Modeler Plugins"
+echo
+echo "Token Simulator"
 git clone https://github.com/bpmn-io/bpmn-js-token-simulation-plugin.git ./camunda-modeler/resources/plugins/token-sim/ 
 
+echo 
+echo "Cockpit Plugins" 
 git clone https://github.com/camunda/camunda-cockpit-plugins.git
 
-mv ./camunda-cockpit-plugins/cockpit-plugin-rest-client/src/main/resources/plugin-webapp/rest-client ./camunda-engine/server/apache-tomcat-9.0.19/webapps/camunda/plugin/
-
+echo 
+echo "REST Client"
 cd camunda-cockpit-plugins/cockpit-plugin-rest-client
 mvn clean install 
 cp target/cockpit-plugin-rest-client.jar ../../camunda-engine/server/apache-tomcat-9.0.19/webapps/camunda/WEB-INF/lib
