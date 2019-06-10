@@ -1,0 +1,37 @@
+[
+  {
+    "name" : "String To ROS",
+    "id"   : "string_to_ros",
+    "appliesTo" :
+    [
+      "bpmn:Task"
+    ],
+    "properties" :
+    [
+      {
+        "label"       : "String",
+        "type"        : "String",
+        "description" : "The string to be sent",
+        "binding" :
+        {
+          "name" : "string",
+          "type" : "camunda:inputParameter"
+        }
+      },
+      {
+        "label" : "ROS Topic",
+        "type"  : "String",
+        "description" : "The ROS topic the string will be published on",
+        "binding" :
+        {
+          "name" : "ros_topic",
+          "type" : "camunda:inputParameter"
+        },
+        "constraints" :
+        {
+          "notEmpty" : true
+        }
+      }
+    ]
+  }
+]

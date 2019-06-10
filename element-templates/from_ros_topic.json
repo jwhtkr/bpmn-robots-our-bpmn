@@ -1,0 +1,37 @@
+[
+  {
+    "name" : "String From ROS",
+    "id"   : "string_from_ros",
+    "appliesTo" :
+    [
+      "bpmn:Task"
+    ],
+    "properties" :
+    [
+      {
+        "label"       : "String",
+        "type"        : "String",
+        "description" : "The string to be received",
+        "binding" :
+        {
+          "source" : "string",
+          "type"   : "camunda:outputParameter"
+        }
+      },
+      {
+        "label" : "ROS Topic",
+        "type"  : "String",
+        "description" : "The ROS topic the string will be pulled from",
+        "binding" :
+        {
+          "name" : "ros_topic",
+          "type" : "camunda:inputParameter"
+        },
+        "constraints" :
+        {
+          "notEmpty" : true
+        }
+      }
+    ]
+  }
+]
