@@ -2,22 +2,13 @@
   {
     "name" : "String To ROS",
     "id"   : "string_to_ros",
+    "type" : "External",
     "appliesTo" :
     [
       "bpmn:Task"
     ],
     "properties" :
     [
-      {
-        "label"       : "String",
-        "type"        : "String",
-        "description" : "The string to be sent",
-        "binding" :
-        {
-          "name" : "string",
-          "type" : "camunda:inputParameter"
-        }
-      },
       {
         "label" : "ROS Topic",
         "type"  : "String",

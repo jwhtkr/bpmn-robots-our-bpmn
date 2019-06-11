@@ -2,6 +2,7 @@
   {
     "name" : "String From ROS",
     "id"   : "string_from_ros",
+    "type" : "External",
     "appliesTo" :
     [
       "bpmn:Task"
@@ -10,12 +11,12 @@
     [
       {
         "label"       : "String",
-        "type"        : "String",
+        "type"        : "Hidden",
         "description" : "The string to be received",
         "binding" :
         {
-          "source" : "string",
-          "type"   : "camunda:outputParameter"
+          "name"   : "string",
+          "type"   : "camunda:field"
         }
       },
       {
