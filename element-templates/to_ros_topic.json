@@ -2,21 +2,29 @@
   {
     "name" : "String To ROS",
     "id"   : "string_to_ros",
-    "type" : "External",
     "appliesTo" :
     [
-      "bpmn:Task"
+      "bpmn:ServiceTask"
     ],
     "properties" :
     [
       {
-        "label" : "ROS Topic",
-        "type"  : "String",
+        "type"  : "Hidden",
+        "value" : "external",
+        "binding" :
+        {
+          "type" : "property",
+          "name" : "type"
+        }
+      },
+      {
+        "label"       : "ROS Topic",
+        "type"        : "String",
         "description" : "The ROS topic the string will be published on",
         "binding" :
         {
-          "name" : "ros_topic",
-          "type" : "camunda:inputParameter"
+          "name" : "topic",
+          "type" : "property"
         },
         "constraints" :
         {

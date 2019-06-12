@@ -2,31 +2,39 @@
   {
     "name" : "String From ROS",
     "id"   : "string_from_ros",
-    "type" : "External",
     "appliesTo" :
     [
-      "bpmn:Task"
+      "bpmn:ServiceTask"
     ],
     "properties" :
     [
+      {
+        "type"  : "Hidden",
+        "value" : "external",
+        "binding" :
+        {
+          "type" : "property",
+          "name" : "type"
+        }
+      },
       {
         "label"       : "String",
         "type"        : "Hidden",
         "description" : "The string to be received",
         "binding" :
         {
-          "name"   : "string",
-          "type"   : "camunda:field"
+          "type"   : "camunda:in",
+          "variables"   : "all"
         }
       },
       {
-        "label" : "ROS Topic",
-        "type"  : "String",
+        "label"       : "ROS Topic",
+        "type"        : "String",
         "description" : "The ROS topic the string will be pulled from",
         "binding" :
         {
-          "name" : "ros_topic",
-          "type" : "camunda:inputParameter"
+          "name" : "topic",
+          "type" : "property"
         },
         "constraints" :
         {
